@@ -9,7 +9,7 @@ if !executable(himalaya)
   throw 'Himalaya CLI not found, see https://pimalaya.org/himalaya/cli/latest/installation/'
 endif
 
-let g:himalaya_executable = 'RUST_LOG=off ' . himalaya
+let g:himalaya_executable = himalaya
 
 " Backup cpo
 let s:cpo_backup = &cpo

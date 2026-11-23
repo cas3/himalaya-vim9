@@ -7,6 +7,7 @@ function! himalaya#job#neovim#start(cmd, on_data) abort
 
   let cmd = split(a:cmd, ' -- ')
   let job = jobstart(cmd[0], {
+  \ 'env': {'RUST_LOG': 'off'},
   \ 'on_stdout': {_, lines -> s:on_stdout(lines)},
   \ 'on_stderr': {_, lines -> s:on_stderr(lines)},
   \ 'on_exit': {_, exit_code -> s:on_exit(exit_code, a:on_data)},
